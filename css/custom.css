@@ -1,0 +1,46 @@
+/* custom.css */
+
+code {
+    color: black;
+}
+
+/* When highlighted code blocks are too wide, they wrap. Resulting in the */
+/* line numbers column's rows not lining up with the code rows. Prevent */
+/* wrapping. */
+pre {
+    white-space: pre;
+    width: inherit;
+}
+
+body {
+    font-family: 'Armata', 'Verdana', 'Droid Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.667em;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.navbar-brand {
+    font-family: 'Roboto Slab', 'Droid Serif', 'Georgia', serif;
+    font-weight: bold;
+}
+
+code, kbd, pre, samp {
+    font-family: 'Inconsolata', monospace;
+    line-height: 1.333em;
+}
+kbd, pre, samp {
+    font-size: 16px;
+}
+code {
+    font-size: 1.056em;
+}
+
+/*
+h1 { font-size: 48px; }
+h2 { font-size: 40px; }
+h3 { font-size: 32px; }
+h4 { font-size: 24px; }
+h5 { font-size: 18px; }
+h6 { font-size: 16px; }
+*/
