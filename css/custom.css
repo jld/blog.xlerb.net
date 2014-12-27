@@ -36,6 +36,10 @@ code {
     font-size: 1.056em;
 }
 
+#content p {
+    max-width: 44em;
+}
+
 /*
 h1 { font-size: 48px; }
 h2 { font-size: 40px; }
