@@ -1,5 +1,8 @@
 SRCS=$(wildcard .frogrc _src/*.html _src/*.md _src/posts/*.md)
-targets=westworld.xlerb.net:/home/www/blog undertow.xlerb.net:/home/www/blog
+
+deployments=westworld undertow
+remote_westworld=westworld.xlerb.net:/home/www/blog
+remote_undertow=undertow.xlerb.net:/home/www/blog
 
 all: .build_stamp
 .build_stamp: $(SRCS) out
@@ -13,10 +16,15 @@ out:
 	  ln -s "../$n" "out/$n" || break; \
 	done
 
-deploy: all
-	for target in $(targets); do \
-	  rsync -HPav --copy-unsafe-links --exclude '*~' out/ "$${target}/"; \
-	done
+
+deploy: $(foreach name,$(deployments),deploy_$(name))
+
+define deploy__template =
+deploy_$(1): .build_stamp
+	rsync -HPav --copy-unsafe-links --exclude '*~' out/ $$(remote_$(1))
+endef
+
+$(foreach name,$(deployments),$(eval $(call deploy__template,$(name))))
 
 clean:
 	raco frog -c
@@ -24,4 +32,4 @@ clean:
 cleaner:
 	rm -r out .frog
 
-.PHONY: all clean cleaner
+.PHONY: all clean cleaner $(foreach name,$(deployments),deploy_$(name))
