@@ -16,8 +16,10 @@ out:
 	  ln -s "../$n" "out/$n" || break; \
 	done
 
+deploy:
+	$(MAKE) -j$(words $(deployments)) parallel_deploy
 
-deploy: $(foreach name,$(deployments),deploy_$(name))
+parallel_deploy: $(foreach name,$(deployments),deploy_$(name))
 
 define deploy__template =
 deploy_$(1): .build_stamp
