@@ -7,7 +7,7 @@ remote_undertow=undertow.xlerb.net:/home/www/blog
 all: .build_stamp
 .build_stamp: $(SRCS) out
 	raco frog -b
-	touch .build_stamp
+	echo > .build_stamp
 
 out:
 	mkdir out
