@@ -23,7 +23,8 @@ parallel_deploy: $(foreach name,$(deployments),deploy_$(name))
 
 define deploy__template =
 deploy_$(1): .build_stamp
-	rsync -HPav --copy-unsafe-links --exclude '*~' out/ $$(remote_$(1))
+	rsync -HPav --copy-unsafe-links --exclude '*~' $(RSYNC_FLAGS) \
+	  out/ $$(remote_$(1))
 endef
 
 $(foreach name,$(deployments),$(eval $(call deploy__template,$(name))))
