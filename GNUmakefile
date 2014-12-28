@@ -12,8 +12,8 @@ all: .build_stamp
 out:
 	mkdir out
 	for n in css fonts img js; do \
-	  [ -e "out/$n" ] && continue; \
-	  ln -s "../$n" "out/$n" || break; \
+	  [ -e "out/$$n" ] && continue; \
+	  ln -s "../$$n" "out/$$n" || break; \
 	done
 
 deploy:
