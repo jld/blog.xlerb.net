@@ -15,7 +15,7 @@ pre {
 body {
     font-family: 'Armata', 'Verdana', 'Droid Sans', sans-serif;
     font-size: 18px;
-    line-height: 1.667em;
+    line-height: 1.833em;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -38,6 +38,7 @@ code {
 
 #content p {
     max-width: 45em;
+    margin-bottom: 1em;
 }
 
 /*
