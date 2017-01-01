@@ -14,14 +14,14 @@ them about it or anything, but I was kind of rolling my eyes.
 [SMTP]: https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol
 
 But for the past month I've been doing [Advent of Code][advoc] in
-Haskell as a learning exercise — I first encountered Haskell probably
+Haskell as a learning exercise.  I first encountered Haskell probably
 back in 1999, but hadn't ever had an excuse to use it for anything
-nontrivial.  I tried to reframe problems in pure functional terms when
-I could — why use Haskell only to treat it like some language I
-already know? — but some of them really are sequential, and so I wound
-up exploring monads and monad transformers.  I actually never found
-myself juggling noncommuting effects, but I was trying to get an
-intuition for how they'd work.
+nontrivial.  I tried to reframe problems in ways that would make good
+use of lazy evaluation and pure functional style when I could — if I'd
+wanted ML, I know where to find it — but some of them really are
+sequential, and so I wound up exploring monads and monad transformers.
+I actually never found myself juggling noncommuting effects, but I was
+trying to get an intuition for how they'd work.
 
 [advoc]: http://adventofcode.com/
 
